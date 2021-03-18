@@ -3,18 +3,18 @@
  * Form Service
  */
 
-export const FormList = [
+const FormList = [
     {
         id: 4,
         component: 'counter'
     },
     {
         id: 5,
-        component: 'checkbox'
+        component: 'image-radio'
     },
     {
         id: 6,
-        component: 'radiobutton',
+        component: 'radio',
     },
     {
         id: 8,
@@ -33,3 +33,9 @@ export const FormList = [
         component: 'image-upload'
     }
 ]
+
+export const FormService = {
+    getTypeName: (typeId) => {
+        return FormList.find(item => item.id == typeId);
+    }
+}

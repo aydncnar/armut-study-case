@@ -1,0 +1,22 @@
+/*
+* Aydin Cinar <cinar.aydinn@gmail.com>
+* Buttons
+*/
+
+%button {
+  display: block;
+  height: 46px;
+  padding: 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.button {
+  &--primary {
+    @extend %button;
+    background-color: $--color-primary;
+    color: #FFF;
+  }
+}

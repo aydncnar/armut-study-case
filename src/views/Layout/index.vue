@@ -3,6 +3,7 @@
     <page-header :title="headerTitle" />
     <header-progress/>
     <box-price :property="boxPriceData" />
+    <slot />
   </div>
 </template>
 
