@@ -18,15 +18,15 @@ const FormList = [
     },
     {
         id: 8,
-        component: 'detail',
+        component: 'free-text-questions',
     },
     {
         id: 9,
-        component: 'where'
+        component: 'location'
     },
     {
         id: 11,
-        component: 'when'
+        component: 'time'
     },
     {
         id: 13,
