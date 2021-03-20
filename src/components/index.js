@@ -15,6 +15,7 @@ import HeaderProgress from './header-progress';
 import ImageUpload from './image-upload';
 import PageHeader from './header';
 import RadioButton from './radio-button';
+import RadioButtonTime from './radio-button-time';
 
 export {
     ArmutSelect,
@@ -29,4 +30,5 @@ export {
     ImageUpload,
     PageHeader,
     RadioButton,
+    RadioButtonTime
 }

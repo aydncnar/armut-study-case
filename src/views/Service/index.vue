@@ -83,6 +83,7 @@ export default {
       }
     },
     goResult() {
+      this.checkValidity();
       !this.validation && this.$router.push(`/result`);
     },
     checkValidity() {

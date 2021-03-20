@@ -1,7 +1,7 @@
 <template>
   <div class="select">
     <select class="select__input" @change="handleSelect" v-model="selected" ref="element">
-      <option disabled selected>{{ title }}</option>
+      <option v-if="title" disabled selected>{{ title }}</option>
       <option v-for="(item, index) in list" :key="`select-key-${index}`">
         {{item.name}}
       </option>
@@ -31,14 +31,14 @@ export default {
     }
   },
   mounted() {
-    if (this.selectedItem.trim() != '') {
+    if (this.selectedItem != '') {
       this.selected = this.selectedItem
     } else  {
       this.selected = this.title
     }
   },
   updated() {
-    if (this.selectedItem.trim() != '') {
+    if (this.selectedItem != '') {
       this.selected = this.selectedItem
     } else  {
       this.selected = this.title
@@ -54,6 +54,7 @@ export default {
   border: 1px solid $--color-border;
   border-radius: 3px;
   padding: 0 8px;
+  background-color: #FFF;
 
   &__input {
     width: 100%;
