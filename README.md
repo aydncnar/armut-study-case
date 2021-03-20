@@ -3,6 +3,7 @@
 # Armut Study Case
 
 **Used Technologies:** Vuejs, Vuex, Scss, Jest
+
 **Demo Page:**  https://armut-study-case.netlify.app/#/
 
 ##  How To Start
