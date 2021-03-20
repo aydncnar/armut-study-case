@@ -3,9 +3,7 @@
  * Answers Service
  */
 
-
-const ARMUT_ANSWERS = "armut-answers";
-const answerList = window.localStorage.getItem(ARMUT_ANSWERS) || [];
+let answerList = [];
 
 export const AnswerService = {
     addOrUpdate: (answer) => {
@@ -20,5 +18,8 @@ export const AnswerService = {
     getValue(questionId) {
         const answerIndex = answerList.findIndex(item => item.questionId == questionId);
         return answerIndex == -1 ? false : answerList[answerIndex].answer;
+    },
+    clear() {
+        answerList = [];
     }
 }

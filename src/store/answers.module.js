@@ -4,6 +4,7 @@
 */
 import { ADD_OR_UPDATE_ANSWERS, CLEAR_ANSWERS } from './actions.type';
 import { SET_ANSWERS } from'./mutation.type';
+import { AnswerService } from '@/service/answer.service';
 
 const state = {
     answers: [],
@@ -26,6 +27,7 @@ const actions = {
         commit(SET_ANSWERS, answers);
     },
     [CLEAR_ANSWERS]({commit}) {
+        AnswerService.clear();
         commit(SET_ANSWERS, []);
     }
 };
