@@ -11,6 +11,7 @@
         :image="questionItem.valueImageUrl"
         v-model="type"/>
   </div>
+  <p v-if="validation" class="validation-copy">Bu Alan Zorunlu</p>
 </div>
 </template>
 
@@ -24,7 +25,9 @@ export default {
     }
   },
   props: {
-    question: Object
+    question: Object,
+    selected: String,
+    validation: Boolean
   },
   components: {
     RadioButton
@@ -32,7 +35,11 @@ export default {
   methods: {
     handleSelect(value) {
       this.type = value;
+      this.$emit('update-answer', value)
     }
+  },
+  mounted() {
+    this.type = this.selected
   }
 }
 </script>

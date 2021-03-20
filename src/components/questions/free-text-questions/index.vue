@@ -1,7 +1,12 @@
 <template>
   <div class="free-text-questions">
     <h2 class="section--title">{{question.label}}</h2>
-    <armut-text-area :placeholder="question.placeHolder" />
+    <armut-text-area
+        :placeholder="question.placeHolder"
+        :validation="validation"
+        :custom-value="selected"
+        @handle-change="handleChange" />
+    <p v-if="validation" class="validation-copy">Bu Alan Zorunlu</p>
   </div>
 </template>
 
@@ -10,26 +15,25 @@ import ArmutTextArea  from '@/components/text-area';
 
 export default {
   props: {
-    question: Object
+    question: Object,
+    selected: String,
+    validation: Boolean
   },
   components: {
     ArmutTextArea
   },
-  methods: {}
+  methods: {
+    handleChange(value) {
+      this.$emit('update-answer', value)
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-.radio-questions {
-  .question-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .counter{
-    width: 100%;
-    margin: 8px 0;
+.free-text-questions {
+  .validation-copy {
+    margin-top: 8px;
   }
 }
 </style>

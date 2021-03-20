@@ -26,7 +26,7 @@ const FormList = [
     },
     {
         id: 11,
-        component: 'time'
+        component: 'when'
     },
     {
         id: 13,

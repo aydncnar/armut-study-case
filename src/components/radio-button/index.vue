@@ -80,7 +80,7 @@ export default {
     display: inline-block;
     width: 16px;
     height: 16px;
-    border: 1px solid #C5C6CD;
+    border: 1px solid $--color-border;
     border-radius: 50%;
     background-color: #FFF;
 

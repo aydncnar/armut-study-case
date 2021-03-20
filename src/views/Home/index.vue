@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { FETCH_SERVICES } from '@/store/actions.type';
+import { CLEAR_ANSWERS, FETCH_SERVICES } from '@/store/actions.type';
 import { BoxService }  from "@/components";
 
 export default {
@@ -19,6 +19,7 @@ export default {
     BoxService
   },
   mounted() {
+    this.$store.dispatch(CLEAR_ANSWERS);
     this.$store.dispatch(FETCH_SERVICES).then(() => {
       this.serviceList = this.$store.getters.services;
     })

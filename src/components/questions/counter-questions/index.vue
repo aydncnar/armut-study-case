@@ -2,7 +2,11 @@
   <div class="radio-questions">
     <h2 class="section--title">{{question.label}}</h2>
     <div class="question-list">
-      <counter :values="question.values" :unit="question.unit"/>
+      <counter
+          :values="question.values"
+          :unit="question.unit"
+          :selected="selected"
+          @countChange="handleCount"/>
     </div>
   </div>
 </template>
@@ -12,12 +16,17 @@ import Counter  from '@/components/counter';
 
 export default {
   props: {
-    question: Object
+    question: Object,
+    selected: String
   },
   components: {
     Counter
   },
-  methods: {}
+  methods: {
+    handleCount(value) {
+      this.$emit('update-answer', value)
+    }
+  },
 }
 </script>
 

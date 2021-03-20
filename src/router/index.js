@@ -15,6 +15,11 @@ const routes = [
     name: 'Service',
     component: () => import(/* webpackChunkName: "service" */ "../views/Service")
   },
+  {
+    path: '/result',
+    name: 'Result',
+    component: () => import(/* webpackChunkName: "result" */ "../views/Result")
+  }
 ]
 
 const router = new VueRouter({

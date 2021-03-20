@@ -8,7 +8,7 @@ import { FETCH_SERVICES } from './actions.type';
 import { SET_SERVICES } from'./mutation.type';
 
 const state = {
-    services: [],
+    services: []
 };
 
 const getters = {

@@ -8,9 +8,10 @@
           :model="type"
           :custom-value="questionItem.value"
           :title="questionItem.value"
+          bottom-slot="abc"
           v-model="type"/>
     </div>
-    <p v-if="validation" class="validation-copy">Bu Alan Zorunlu</p>
+    <p class="validation-copy">Bu Alan Zorunlu</p>
   </div>
 </template>
 
@@ -20,13 +21,12 @@ import RadioButton from '@/components/radio-button';
 export default {
   data() {
     return {
-      type: ''
+      type: '',
+      customQuestionId: 4 // For Custom Time Select
     }
   },
   props: {
-    question: Object,
-    selected: String,
-    validation: Boolean
+    question: Object
   },
   components: {
     RadioButton
@@ -34,11 +34,7 @@ export default {
   methods: {
     handleSelect(value) {
       this.type = value;
-      this.$emit('update-answer', value)
     }
-  },
-  mounted() {
-    this.type = this.selected
   }
 }
 </script>

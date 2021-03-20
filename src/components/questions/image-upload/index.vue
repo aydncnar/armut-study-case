@@ -2,7 +2,7 @@
   <div class="image-upload-questions">
     <h2 class="section--title">{{question.label}}</h2>
     <div class="question-list">
-      <image-upload />
+      <image-upload @handleSelect="handleSelect" />
     </div>
   </div>
 </template>
@@ -16,6 +16,11 @@ export  default  {
   },
   components: {
     ImageUpload
+  },
+  methods: {
+    handleSelect(files) {
+      this.$emit('update-answer', files)
+    }
   }
 }
 </script>

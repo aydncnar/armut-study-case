@@ -14,6 +14,9 @@ const state = {
 const getters = {
     questions(state) {
         return state.questions;
+    },
+    lastPageNumber(state) {
+        return state.questions.length ? state.questions[state.questions.length - 1].pageNumber : 0;
     }
 };
 

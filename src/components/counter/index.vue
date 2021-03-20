@@ -30,7 +30,8 @@ export default {
   },
   props: {
     unit: String,
-    values: Array
+    values: Array,
+    selected: String
   },
   computed: {
     maxLength() {
@@ -49,56 +50,21 @@ export default {
   methods: {
     handleMinus() {
       this.selectedIndex > 0 && this.selectedIndex--;
-      this.$emit('countChange', this.value);
+      this.$emit('countChange', this.selectedValue);
     },
     handlePlus() {
       this.selectedIndex < this.maxLength && this.selectedIndex++;
-      this.$emit('countChange', this.value);
+      this.$emit('countChange', this.selectedValue);
     }
   },
+  mounted() {
+    const index = this.values.findIndex(item => item.value == this.selected);
+    if (index != -1) {
+      this.selectedIndex = index;
+    }
+    this.$emit('countChange', this.selectedValue);
+  }
 }
 </script>
 
-<style lang="scss">
-.counter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &__toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border: 1px solid #C5C6CD;
-    border-radius: 50%;
-    background-color: #FFF;
-
-    &:focus,
-    &:active {
-      background-color: $--color-light-bg;
-    }
-  }
-
-  &__summary {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__value {
-    color: $--color-text;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 52px;
-  }
-
-  &__unit {
-    color: $--color-text-light;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 28px;
-  }
-}
-</style>
+<style lang="scss" src="./style.scss"></style>

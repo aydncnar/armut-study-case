@@ -23,10 +23,7 @@ export  default  {
     }
   },
   methods: {
-    handleChange(e) {
-      this.images = [];
-      let fileList = e.target.files;
-
+    preview (fileList) {
       fileList.forEach(file => {
 
         if(!file.type.match("image.*")) {
@@ -41,6 +38,12 @@ export  default  {
         }
         reader.readAsDataURL(file);
       })
+    },
+    handleChange(e) {
+      this.images = [];
+      let fileList = e.target.files;
+      this.$emit('handleSelect', fileList)
+      this.preview(fileList)
     }
   }
 }
@@ -81,7 +84,7 @@ export  default  {
     width: calc(50% - 8px);
     height: auto;
     margin: 8px 0;
-    border: 1px solid #C5C6CD;
+    border: 1px solid $--color-border;
     padding: 4px;
 
     &:nth-child(odd) {
