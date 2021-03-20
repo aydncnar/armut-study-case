@@ -54,7 +54,6 @@ export default {
     handleSelectTime(value, time) {
       this.type = value;
       this.$emit('update-answer', `${value} : ${time} `);
-      console.log(value, time)
     }
   }
 }
