@@ -39,6 +39,9 @@ export default {
       this.isChecked();
     }
   },
+  mounted() {
+    this.isChecked()
+  }
 }
 </script>
 
