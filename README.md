@@ -1,10 +1,13 @@
 
 
+
 # Armut Study Case
 
-**Used Technologies:** Vuejs, Vuex, Scss, Jest
+**Used Technologies:** Vuejs, Vuex, Scss, Jest, Storybook
 
-**Demo Page:**  https://armut-study-case.netlify.app/#/
+**Case Demo Page:** https://armut-study-case.netlify.app/#/
+
+**Case Storybook Page:** https://storybook-armut-study-case.netlify.app/
 
 ##  How To Start
 
@@ -16,51 +19,49 @@ https://nodejs.org/en/
 :arrow_up: **Install yarn**
 
 Global terminal
-```
-npm install -g yarn
-```
+```  
+npm install -g yarn  
+```  
 
 ➕ **Install dependencies**
 
 In the project root directory:
-```
-yarn install
-```
+```  
+yarn install  
+```  
 
 
 
-🚧  **Compiles and hot-reloads for development**
+🚧 **Compiles and hot-reloads for development**
 
 In the project root directory:
-```
-yarn serve
-```
+```  
+yarn serve  
+```  
 
 
 
 🚀 **Compiles and minifies for production**
 
 In the project root directory:
-```
-yarn build
-```
+```  
+yarn build  
+```  
 
 
 ✅ **Run your unit tests**
 
 In the project root directory:
 
-```
-yarn test:unit
-```
+```  
+yarn test:unit  
+```  
 
 
 
 ✏️ **Lints and fixes files**
 
 In the project root directory:
+```  
+yarn lint  
 ```
-yarn lint
-```
-
- 
