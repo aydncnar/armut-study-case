@@ -9,11 +9,16 @@ export default {
   },
   computed: {
     textStyled() {
-      const index = this.text.indexOf('%')
-      const priceText = this.text.substr(index, 3)
-      const newPriceText = `<span class="discount-banner__amount">${priceText}</span>`
-      const newText = this.text.replace(priceText, newPriceText);
-      return newText;
+      let returnValue = this.text;
+      (typeof this.text == 'undefined') && (returnValue = '');
+      const index = returnValue.indexOf('%')
+      if (index != -1) {
+        const priceText = this.text.substr(index, 3)
+        const newPriceText = `<span class="discount-banner__amount">${priceText}</span>`
+        const newText = returnValue.replace(priceText, newPriceText);
+        return newText;
+      }
+      return returnValue;
     }
   }
 }

@@ -55,14 +55,17 @@ export default {
     handlePlus() {
       this.selectedIndex < this.maxLength && this.selectedIndex++;
       this.$emit('countChange', this.selectedValue);
+    },
+    init() {
+      const index = this.values.findIndex(item => item.value == this.selected);
+      if (index != -1) {
+        this.selectedIndex = index;
+      }
+      this.$emit('countChange', this.selectedValue);
     }
   },
   mounted() {
-    const index = this.values.findIndex(item => item.value == this.selected);
-    if (index != -1) {
-      this.selectedIndex = index;
-    }
-    this.$emit('countChange', this.selectedValue);
+    this.init();
   }
 }
 </script>

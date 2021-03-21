@@ -34,21 +34,20 @@ export default {
   methods: {
     handleSelect(e) {
       this.$emit('handleSelect',this.dataname, e.target.value)
+    },
+    init() {
+      if (this.selectedItem != '') {
+        this.selected = this.selectedItem
+      } else  {
+        this.selected = this.title
+      }
     }
   },
   mounted() {
-    if (this.selectedItem != '') {
-      this.selected = this.selectedItem
-    } else  {
-      this.selected = this.title
-    }
+    this.init();
   },
   updated() {
-    if (this.selectedItem != '') {
-      this.selected = this.selectedItem
-    } else  {
-      this.selected = this.title
-    }
+    this.init()
   }
 }
 </script>

@@ -24,10 +24,13 @@ export default {
   methods: {
     handleChange(e) {
       this.$emit('handle-change', e.target.value)
+    },
+    init() {
+      this.val = this.customValue;
     }
   },
   mounted() {
-    this.val = this.customValue;
+   this.init();
   }
 }
 </script>

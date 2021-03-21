@@ -33,7 +33,6 @@ export const Base = () => ({
                     "value": "4",
                     "valueOrder":3
                 }
-
             ]
         }
     }
