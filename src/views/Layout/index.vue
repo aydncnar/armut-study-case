@@ -1,7 +1,7 @@
 <template>
   <div>
     <page-header :title="headerTitle" />
-    <header-progress/>
+    <header-progress :progress="progress"/>
     <box-price :property="boxPriceData" />
     <slot />
   </div>
@@ -14,7 +14,8 @@ export default {
   data() {
     return {
       boxPriceData: {},
-      headerTitle: ''
+      headerTitle: '',
+      progress: 1
     }
   },
   components: {
@@ -32,6 +33,9 @@ export default {
     const service = this.$store.getters.currentService(serviceId);
     this.boxPriceData = service.price;
     this.headerTitle = service.name;
+  },
+  updated() {
+    this.progress = this.$store.getters.progress
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <div class="select">
-    <select class="select__input" @change="handleSelect" v-model="selected" ref="element">
+  <div class="select" :class="validationClass">
+    <select class="select__input"  @change="handleSelect" v-model="selected" ref="element">
       <option v-if="title" disabled selected>{{ title }}</option>
       <option v-for="(item, index) in list" :key="`select-key-${index}`">
         {{item.name}}
@@ -23,7 +23,13 @@ export default {
     list: [Array, Object],
     title: String,
     dataname: String,
-    selectedItem: String
+    selectedItem: String,
+    validation: Boolean
+  },
+  computed: {
+    validationClass() {
+      return this.validation ? 'is-validation' : '';
+    }
   },
   methods: {
     handleSelect(e) {
@@ -55,6 +61,10 @@ export default {
   border-radius: 3px;
   padding: 0 8px;
   background-color: #FFF;
+
+  &.is-validation {
+    border-color: $--color-validation;
+  }
 
   &__input {
     width: 100%;
